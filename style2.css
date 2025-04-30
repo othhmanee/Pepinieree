@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: #ffffff;
+    color: #333;
+  }
+  
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #82BE6B;
+    padding: 20px 50px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .main-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .main-nav a:hover {
+    text-decoration: underline;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-actions input {
+    padding: 6px 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+  }
+  .header-actions i {
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .search-bar button:hover{
+      background-color: #004d00;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+  
+  .product-image img {
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    background: radial-gradient(circle, #d6f5d6 40%, #b4ddb4 100%);
+    padding: 20px;
+  }
+  
+  .product-details {
+    max-width: 400px;
+  }
+  
+  .product-details h1 {
+    font-size: 36px;
+    color: #2e8b57;
+    margin-bottom: 15px;
+  }
+  
+  .product-details p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .product-details h2 {
+    font-size: 28px;
+    color: #2e8b57;
+    margin-bottom: 20px;
+  }
+  
+  .pot-colors p {
+    margin-bottom: 10px;
+  }
+  
+  .color-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+
+  
+  .order-btn {
+    padding: 10px 20px;
+    background: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .order-btn:hover {
+    background: #256b45;
+  }
+  .site-footer {
+    background-color: #2e8b57;
+    color: white;
+    padding: 40px 30px 20px;
+    margin-top: 50px;
+
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-column h3,
+  .footer-column h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column p,
+  .footer-column a {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 6px 0;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  

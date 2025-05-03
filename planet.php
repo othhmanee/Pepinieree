@@ -22,18 +22,18 @@ if (!$product) {
 <head>
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($product['name']) ?> - Green World</title>
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style/style2.css">
 </head>
 
 <body>
   <header class="main-header">
   <div class="logo">🌿 Green World</div>
 
-    <nav class="main-nav">
-      <a href="html.html">Home</a>
-      <a href="explore.php">Produits</a>
-      <a href="about.php">À propos</a>
-      <a href="#">Contact</a>
+  <nav class="main-nav">
+      <a href="html.html" style="color: white;">Home</a>
+      <a href="explore.php" style="color: white;">Produits</a>
+      <a href="about.php" style="color: white;">À propos</a>
+      <a href="#" style="color: white;">Contact</a>
     </nav>
   </header>
 
@@ -47,7 +47,7 @@ if (!$product) {
       <p><?= htmlspecialchars($product['description']) ?></p>
       <h2><?= number_format($product['price'], 2) ?> MAD</h2>
 
-      <button class="order-btn" onclick="window.location.href='planet.php';">Commander maintenant</button>
+      <button class="order-btn" onclick="window.location.href='payment.php';">Commander maintenant</button>
     </div>
   </main>
 

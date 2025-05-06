@@ -20,7 +20,7 @@ if (!empty($product_ids)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <title>Payment | Green World</title>
     <link rel="stylesheet" href="style/payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -132,7 +132,7 @@ if (!empty($product_ids)) {
         <h2>Your Shopping Cart</h2>
         <?php if (count($cart_items) > 0): ?>
             <?php foreach ($cart_items as $index => $item):
-                $product_image = $images[$item['id']] ?? 'default.jpg';
+                $product_image = isset($images[$item['id']]) ? $images[$item['id']] : null;
                 $item_total = $item['price'] * $item['quantity'];
                 $subtotal += $item_total;
             ?>

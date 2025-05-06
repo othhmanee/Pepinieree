@@ -47,7 +47,7 @@
   }
   
   .hero {
-    background-image: url("images/plant.jpg");
+    background-image: url("../images/plante.jpg");
     height: 90vh;
     background-size: cover;
     background-position: center;

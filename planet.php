@@ -3,14 +3,18 @@
 $pdo = new PDO('mysql:host=localhost;dbname=greenworld;charset=utf8mb4', 'root', '');
 
 
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+if (isset($_GET['id']) && isset($_GET['id'])) {
+  $id = (int)$_GET['id'];
+} else {
+  $id = 0;
+}
+
 
 // Fetch the product
 $stmt = $pdo->prepare("SELECT * FROM products WHERE id = ?");
 $stmt->execute([$id]);
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// If no product found, redirect to products page
 if (!$product) {
   header('Location: products.php');
   exit;
@@ -23,6 +27,7 @@ if (!$product) {
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($product['name']) ?> - Green World</title>
   <link rel="stylesheet" href="style/style2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -35,6 +40,12 @@ if (!$product) {
       <a href="about.php" style="color: white;">À propos</a>
       <a href="#" style="color: white;">Contact</a>
     </nav>
+</div>
+<div class="header-actions">
+      <input type="text" placeholder="Search...">
+      <a href="G_Pepiniere/insc.php"><i class="fas fa-user"></i></a>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
   </header>
 
   <main class="container">

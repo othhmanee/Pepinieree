@@ -1,38 +1,392 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Explore | Green World</title>
-  <link rel="stylesheet" href="css.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plantplaneter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .icons span {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+
+    .about {
+      padding: 2rem;
+      text-align: center;
+      background: #f5f5f5;
+    }
+
+    .features {
+  background-image: url('images/back.png');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem; 
+  min-height: 500px;  
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.85); /* slightly transparent white */
+  padding: 2rem;
+  border-radius: 8px;
+  width: 40%;
+  margin: 1rem;
+  text-align: center;              
+  display: flex;                   
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2; 
+}
+
+
+
+
+
+    .profile {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .profile-img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .bio {
+      max-width: 600px;
+    }
+
+    .team {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.member {
+  text-align: center;
+  max-width: 300px;
+}
+
+.member img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.member h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.member p {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+
+    footer {
+      background: #f0f0f0;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .newsletter {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    input[type="email"] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkgreen;
+    }
+    .about {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-image img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.about-text .lead {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #82BE6B;
+    padding: 20px 50px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .main-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .main-nav a:hover {
+    text-decoration: underline;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-actions input {
+    padding: 6px 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+  }
+  .header-actions i {
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .search-bar button:hover{
+      background-color: #004d00;
+  }
+  .site-footer {
+  background-color: #2e8b57;
+  color: white;
+  padding: 60px 30px 40px;
+  margin-top: 50px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.footer-column p,
+.footer-column a {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #aef1c1;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+
+  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Réutilisation du header -->
   <header class="main-header">
     <div class="logo">🌿 Green World</div>
+  
     <nav class="main-nav">
-      <a href="html.html" style="color: white;">Home</a>
-      <a href="explore.php" style="color: white;">Produits</a>
-      <a href="about.php" style="color: white;">À propos</a>
-      <a href="#" style="color: white;">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <input type="text" placeholder="Search...">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-user"></i>
-      <i class="fas fa-shopping-cart"></i>
-    </div>
-  </header>
-  <h1>About Green World 🌱</h1>
-  <p>We are passionate about bringing nature into your home. Learn more about our journey here!</p>
-  <p>Green World is an eco-friendly e-commerce website dedicated to promoting sustainable living by offering a wide range of natural and environmentally friendly products. The platform is designed with simplicity and elegance, allowing users to easily browse through a collection of plants, eco-products, and green accessories. Each product page provides clear descriptions, images, and prices, giving users a seamless shopping experience. The website also features a user-friendly interface with search functionality, a shopping cart, and account access, making it convenient for customers to manage their purchases. Green World not only encourages customers to bring nature into their homes, but also raises awareness about the importance of protecting the environment through mindful consumption. With its visually appealing design, responsive layout, and meaningful mission, Green World is more than just a store — it's a step toward a greener future.</p>
-  <br>
-  <p>Welcome to our exclusive plant collection at Green World — a space where nature meets elegance and sustainability. Plants are not just decorative elements; they are living companions that purify the air, reduce stress, and bring a refreshing sense of calm into any environment. Whether you’re an experienced plant lover or just beginning your green journey, our wide selection is designed to suit every taste and lifestyle. From low-maintenance succulents and air-purifying indoor plants to vibrant flowering varieties and exotic greenery, each of our plants is handpicked to ensure quality and beauty. We believe that every home deserves a touch of green, and our mission is to make that possible by offering eco-friendly, carefully nurtured plants at affordable prices. With detailed descriptions, care tips, and high-quality images, we help you choose the perfect green companion for your space. Explore the beauty of nature, right at your fingertips — because at Green World, we grow more than plants, we grow happiness.</p>
-<br>
-<p>Our nursery is the heart of Green World — a thriving space where life begins, grows, and flourishes with care, patience, and a deep respect for nature. It is here that we cultivate a wide variety of plants, from delicate indoor greenery to robust outdoor species, each nurtured with expert knowledge and sustainable practices. Our nursery is more than just a place where plants are grown; it is a symbol of our commitment to biodiversity, ecological balance, and the promotion of a greener future. Every plant is raised in an environment that prioritizes organic methods, responsible water use, and natural soil enrichment. Our team of passionate horticulturists ensures that each plant receives the attention it deserves — from the very first sprout to the moment it finds its new home. In our nursery, we also take pride in educating visitors about plant care, the importance of greenery in urban spaces, and how even a small plant can make a big difference. Whether you’re a professional landscaper, a home gardener, or simply a nature enthusiast, our nursery welcomes you with open arms and green leaves. At Green World, we don’t just grow plants — we grow life, beauty, and a sustainable future.</p>
+        <a href="html.html" style="color: white;">Home</a>
+        <a href="explore.php" style="color: white;">Produits</a>
+        <a href="about.php" style="color: white;">À propos</a>
+        <a href="#" style="color: white;">Contact</a>
+      </nav>
+  </div>
+  <div class="header-actions">
+        <input type="text" placeholder="Search...">
+        <a href="G_Pepiniere/insc.php"><i class="fas fa-user"></i></a>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </header>
 
-  <!-- Réutilisation du footer -->
+  <section class="about">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="images/kaja.png" alt="Hanging Plant" />
+      </div>
+      <div class="about-text">
+        <h2>ABOUT</h2>
+        <p class="lead">
+          Planteplaneter are small decorative “planets”, designed as an alternative to the ordinary houseplant.
+        </p>
+        <p>
+          By presenting the plants as little flying planets, they become magic hanging sculptures. We make the planteplaneter by hand in Denmark,
+          and they are based on traditional Japanese techniques with a modern, Scandinavian twist. They can be hung from shelves, hooks from the 
+          ceiling and are perfect for unused spaces. Planteplaneter gives a poetic and decorative feeling to your home and are a different way to 
+          grow and display plants.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="features">
+    <div class="feature">
+      <h3>FREE SHIPPING IN DK</h3>
+      <p>We are shipping all around Europe within 1-10 working days. Shipping in all of  Denmark with GLS is free and we have a flat rate of 120kr for the rest of Europe with UPS</p>
+    </div>
+    <div class="feature">
+      <h3>GREEN CARE</h3>
+      <p>We handle all our handmade Planteplaneter carefully. If you have any questions or concerns we are here to help. Please send an email to info@kajaskytte.dk and we will get back to you as quickly as possible.</p>
+    </div>
+  </section>
+
+
+  <section class="team">
+    <div class="member">
+      <img src="images/employe1.png" alt="Cecilie" />
+      <h3>CECILIE</h3>
+      <p>PLANTEPLANET MAKER AND WEBDIRECTOR</p>
+    </div>
+    <div class="member">
+      <img src="images/employe2.png" alt="Natalie" />
+      <h3>NATALIE</h3>
+      <p>PLANTEPLANET MAKER</p>
+    </div>
+  </section>
+  
+
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-column">
@@ -59,6 +413,7 @@
       <p>&copy; 2025 Green World. All rights reserved.</p>
     </div>
   </footer>
+  
 
 </body>
 </html>

@@ -24,21 +24,26 @@ $result = $conn->query($sql);
   <meta charset="UTF-8">
   <title>Explore | Green World</title>
   <link rel="stylesheet" href="style/style4.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
 <header class="main-header">
-  <div class="logo">🌿 Green World</div>
-  <nav class="main-nav">
-    <a href="html.html">Home</a>
-    <a href="about.php">About</a>
-    <a href="#">Contact Us</a>
-  </nav>
-  <div class="header-actions">
-    <input type="text" placeholder="Search..." />
-    <i class="fas fa-search"></i>
-    <i class="fas fa-user"></i>
+
+<div class="logo"  style="color: white;">🌿 Green World</div>
+<nav class="main-nav">
+            <a href="index.php" style="color: white;">Accueil</a>
+            <a href="explore.php" style="color: white;">Produits</a>
+            <a href="about.html" style="color: white;">À propos</a>
+            <a href="contact.html" style="color: white;">Contact</a>
+        </nav>
+<div class="header-actions" style="color: white;">
+<input type="text" placeholder="Search..." />
+<i class="fas fa-search"  style="color: white;"></i>
+<a href="G_Pepiniere/insc.php">
+<i class="fas fa-user"  style="color: white;"></i>
+</a>
     <div class="cart-icon">
   <a href="payment.php" style="color: inherit;">
     <i class="fas fa-shopping-cart"></i>
@@ -79,32 +84,70 @@ $result = $conn->query($sql);
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>Green World</h3>
-      <p>Bringing nature to your home.</p>
-    </div>
-    <div class="footer-column">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+<footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <span class="mr-2 plant-icon">🌿</span> Green World
+          </h3>
+          <p class="text-gray-400 mb-4">
+            Cultivons ensemble votre passion pour les plantes.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-700 transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-700 transition">
+              <i class="fab fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Nos ateliers</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Plantes suspendues</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Terrariums</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Kokedama</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Ateliers enfants</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Informations</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Livraison</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Retours</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">CGV</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">12 Rue des Jardins, 75005 Paris</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone-alt mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">01 23 45 67 89</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">contact@greenworld.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>&copy; 2023 Green World. Tous droits réservés.</p>
       </div>
     </div>
-    <div class="footer-column">
-      <h4>About Us</h4>
-      <ul>
-        <li><a href="#">Our Story</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Green World. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>

@@ -25,11 +25,6 @@ if (!empty($product_ids)) {
     <link rel="stylesheet" href="style/payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        /* CSS omitted for brevity (use existing styles) */
-    </style>
-</head>
-<body>
-<style>
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -122,7 +117,21 @@ if (!empty($product_ids)) {
             color: #2e7d32;
             font-weight: bold;
         }
+        .checkout-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        .checkout-section div > input {
+            width: 48%;
+            margin-right: 4%;
+        }
     </style>
+</head>
+<body>
+
 <a href="explore.php" class="continue-shopping-top">
     <i class="fas fa-arrow-left"></i> Continue Shopping
 </a>
@@ -132,7 +141,7 @@ if (!empty($product_ids)) {
         <h2>Your Shopping Cart</h2>
         <?php if (count($cart_items) > 0): ?>
             <?php foreach ($cart_items as $index => $item):
-                $product_image = isset($images[$item['id']]) ? $images[$item['id']] : null;
+                $product_image = $images[$item['id']] ?? 'default.jpg';
                 $item_total = $item['price'] * $item['quantity'];
                 $subtotal += $item_total;
             ?>
@@ -176,7 +185,7 @@ if (!empty($product_ids)) {
         <form action="checkout.php" method="post">
             <input type="text" name="name_on_card" placeholder="Name on card" required>
             <input type="text" name="card_number" placeholder="Card Number" required>
-            <div>
+            <div style="display: flex; gap: 4%;">
                 <input type="text" name="expiration" placeholder="MM/YY" required>
                 <input type="text" name="cvv" placeholder="CVV" required>
             </div>

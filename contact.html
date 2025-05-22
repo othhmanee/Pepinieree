@@ -363,7 +363,7 @@
         </div>
       </footer>
     <script>
-        // Soumission du formulaire
+
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Ici, vous enverriez normalement les données du formulaire à votre serveur
@@ -371,7 +371,6 @@
             this.reset();
         });
 
-        // Fonctionnalité d'ouverture/fermeture des FAQ
         document.querySelectorAll('.faq-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
@@ -383,7 +382,6 @@
             });
         });
 
-        // Menu mobile (placeholder - nécessiterait du HTML supplémentaire)
         document.querySelector('header button').addEventListener('click', () => {
             alert('Le menu mobile s\'ouvrirait ici');
         });

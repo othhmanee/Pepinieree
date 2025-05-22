@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 session_start();
 $cart_count = 0;
 if (isset($_SESSION['cart'])) {
@@ -9,13 +10,9 @@ if (isset($_SESSION['cart'])) {
     }
 }
 
-$conn = new mysqli("localhost", "root", "", "greenworld");
-if ($conn->connect_error) {
-    die("Erreur de connexion : " . $conn->connect_error);
-}
 
-$sql = "SELECT * FROM products LIMIT 9"; // LIMIT TO 9 PRODUCTS
-$result = $conn->query($sql);
+$pdo = "SELECT * FROM products"; 
+$result = $conn->query($pdo);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +59,7 @@ $result = $conn->query($sql);
   <section class="collection">
     <h2>🌿 Nos Produits 🌿</h2>
     <div class="plant-cards">
-      <?php while ($row = $result->fetch_assoc()) { ?>
+      <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
         <div class="card">
   <div class="image-wrapper">
     <img src="images/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>">

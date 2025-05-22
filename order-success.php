@@ -45,8 +45,8 @@ $userName = $_SESSION['user'];
 </head>
 <body>
 <div class="container">
-    <h1>Order successful!</h1>
-    <p>Thank you, for your order!</p>
+    <h1>Order successful</h1>
+    <p>Thank you, for your order</p>
     <a href="logout.php" class="logout-btn">Logout</a>
     <a href="generate_invoice.php" class="logout-btn">Télecharger reçue</a>
 

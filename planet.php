@@ -1,22 +1,19 @@
 <?php
-// Connect to database
 $pdo = new PDO('mysql:host=localhost;dbname=greenworld;charset=utf8mb4', 'root', '');
 
 
-if (isset($_GET['id']) && isset($_GET['id'])) {
+if (isset($_GET['id']) ) {
   $id = (int)$_GET['id'];
 } else {
   $id = 0;
 }
 
-
-// Fetch the product
 $stmt = $pdo->prepare("SELECT * FROM products WHERE id = ?");
 $stmt->execute([$id]);
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$product) {
-  header('Location: products.php');
+  header('Location: explore.php');
   exit;
 }
 ?>
@@ -44,14 +41,18 @@ if (!$product) {
 </div>
 <div class="header-actions">
       <input type="text" placeholder="Search...">
-      <a href="G_Pepiniere/insc.php"><i class="fas fa-user"></i></a>
-      <i class="fas fa-shopping-cart"></i>
+        <a href="payment.php" >
+    <i class="fas fa-shopping-cart" style="color: white;"></i>
+    <?php if (isset($cart_count) && $cart_count > 0): ?>
+      <span class="cart-count"><?php echo $cart_count; ?></span>
+    <?php endif; ?>
+  </a>
     </div>
   </header>
 
   <main class="container">
     <div class="product-image">
-      <img src="images/<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+      <img src="images/<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name'])?>">
     </div>
 
     <div class="product-details">

@@ -13,7 +13,7 @@ if (isset($_POST['index'], $_POST['action'])) {
             if ($_SESSION['cart'][$i]['quantity'] < 1) {
                 unset($_SESSION['cart'][$i]);
             }
-            $_SESSION['cart'] = array_values($_SESSION['cart']); // Reindex
+            $_SESSION['cart'] = array_values($_SESSION['cart']);
         }
     }
 }

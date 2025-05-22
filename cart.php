@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Connect to the database using PDO
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=greenworld", "root", "");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

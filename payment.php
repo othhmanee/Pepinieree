@@ -6,7 +6,6 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $cart_items = $_SESSION['cart'] ?? [];
 $subtotal = 0;
 
-// Bulk fetch all product images
 $product_ids = array_column($cart_items, 'id');
 $images = [];
 if (!empty($product_ids)) {
